@@ -1,0 +1,197 @@
+window.PIPELINE_RESUME = {
+  name: "KIRAN SUBRAHAMANYA SAI BANDARU",
+  headline:
+    "Site Reliability Engineer (SRE / DevOps) | Engineering Productivity & Automation | 4+ Years Experience",
+  city: "Dublin, Ireland",
+  phone: "+353 83 813 0850",
+  email: "kiranssb23@gmail.com",
+  yearsExperience: 4,
+  linkedin: "https://www.linkedin.com/in/kiransai006",
+  github: "https://github.com/Kiransai006",
+  summary:
+    "Site Reliability Engineer (SRE / DevOps) with 4+ years of experience building, deploying and operating secure, scalable and fault-tolerant tools and infrastructure on AWS and Azure for an enterprise client (RELX Group). Strong Linux administration and debugging skills, with Python, Go, Java and Bash automation, infrastructure as code (Terraform, Ansible), CI/CD (Jenkins, ArgoCD, GitHub Actions), Kubernetes and Docker, and observability on Prometheus, Grafana and the ELK Stack (Elasticsearch). Focused on removing toil, writing incident runbooks and postmortems, and improving developer workflow efficiency. MSc in Computing Science; AWS and Azure certified.",
+  skills: [
+    {
+      label: "Linux & Systems",
+      content:
+        "Linux administration and debugging, server provisioning and configuration, networking (DNS, HTTP proxy, SSH, SMTP, load balancing), troubleshooting at scale",
+    },
+    {
+      label: "Programming & Automation",
+      content:
+        "Python, Go, Java, Bash, shell scripting, automation workflows, toil reduction, automated alert handling",
+    },
+    {
+      label: "Infrastructure as Code",
+      content: "Ansible, Terraform, reusable modules, remote state and locking",
+    },
+    {
+      label: "Version Control & Artifacts",
+      content: "Git, Gerrit, Perforce, Artifactory",
+    },
+    {
+      label: "Databases & Storage",
+      content:
+        "MySQL, MariaDB, PostgreSQL (Postgres), MongoDB, NAS, SAN, Ceph",
+    },
+    {
+      label: "CI/CD & Delivery",
+      content:
+        "Jenkins, ArgoCD (GitOps), Spinnaker, GitLab, GitHub Actions, Azure DevOps, Maven, safe incremental deployments",
+    },
+    {
+      label: "Containers & Virtualisation",
+      content: "Kubernetes (EKS, AKS), Docker, Helm, Docker Compose, KVM, QEMU",
+    },
+    {
+      label: "Monitoring & Observability",
+      content:
+        "Prometheus, Grafana, Loki, Tempo, Thanos, InfluxDB, Elasticsearch (ELK Stack), Splunk, alerting, dashboards, centralised logging",
+    },
+    {
+      label: "Reliability Practices",
+      content:
+        "Incident response, runbooks, postmortems, root cause analysis (RCA), on-call, high availability, fault tolerance, disaster recovery, capacity planning",
+    },
+    {
+      label: "Cloud & Security",
+      content:
+        "AWS (EC2, EKS, VPC, IAM, S3, CloudWatch), Azure (AKS, Azure Monitor, Virtual Networks), IAM, RBAC, image scanning (Trivy), image signing (Cosign)",
+    },
+  ],
+  experience: [
+    {
+      role: "DevOps Engineer",
+      employer: "Cognizant Technology Solutions (Client: RELX Group)",
+      date: "Sep 2021 -- Jan 2025",
+      bullets: [
+        "Built, deployed and operated production systems with a focus on scalability, reliability, observability and security, running fault-tolerant Kubernetes platforms on AKS and EKS with Helm, autoscaling, health probes, rolling deployments and RBAC access control.",
+        "Automated provisioning, configuration and deployments with Terraform, Ansible, Python and Bash, removing manual toil and replacing it with repeatable, reviewed code.",
+        "Improved CI/CD pipelines in Jenkins, GitHub Actions and Azure DevOps (Git, Maven, automated tests, image scanning, ArgoCD GitOps), reducing deployment time by about 40% and making developer releases faster and safer.",
+        "Built and maintained monitoring and logging on Prometheus, Grafana and the ELK Stack (Elasticsearch), with dashboards and alert rules for proactive detection, which cut incident triage time by about 30%.",
+        "Took part in the on-call rotation, triaged platform and infrastructure issues, led root cause analysis, and wrote runbooks and postmortem documents with permanent fixes that reduced repeat incidents.",
+        "Troubleshot Linux, network and application issues (DNS, HTTP proxy, SSH, SMTP) and worked with development teams to find infrastructure bottlenecks and improve workflow efficiency.",
+        "Planned and communicated changes to production systems, and maintained load balancing, failover, and backup and recovery procedures to support disaster recovery.",
+      ],
+      contribution:
+        "Reduced deployment time by about 40% and incident triage time by about 30% through automation, GitOps-driven CI/CD and Prometheus/Grafana/ELK observability.",
+    },
+    {
+      role: "Software Engineer Intern -- Cloud Deployment & Monitoring Support",
+      employer: "Debots, Hyderabad",
+      date: "Feb 2021 -- Aug 2021",
+      bullets: [
+        "Worked on a live cloud project with developers and senior engineers, supporting application deployments on AWS.",
+        "Wrote Terraform code to provision AWS resources including EC2, S3, VPC and IAM, with all changes version-controlled in Git.",
+        "Created reusable Terraform modules to reduce repetitive setup and keep environments consistent.",
+        "Set up and maintained Jenkins pipelines integrated with GitLab to automate build, test and deployment of application code.",
+        "Monitored application and server health with AWS CloudWatch, reviewed logs and alerts, and helped resolve deployment and environment issues.",
+        "Followed Git branching and code review practices, and documented deployment steps and fixes for the team.",
+      ],
+      contribution:
+        "Automated AWS provisioning with reusable Terraform modules and Jenkins--GitLab pipelines, keeping environments consistent and deployments repeatable.",
+    },
+  ],
+  projects: [
+    {
+      name: "OmniShop Enterprise Platform -- Cloud-Native SRE Project",
+      details:
+        "Personal project: AWS EKS, Terraform, ArgoCD, GitHub Actions, Prometheus, Grafana",
+      url: "https://github.com/Kiransai006/OmniShop-Enterprise-Platform-main",
+      bullets: [
+        "Built a microservices platform (React frontend, Flask orders and products services) containerised with Docker and Docker Compose.",
+        "Wrote Terraform for AWS EKS, VPC and IAM with S3 remote state and DynamoDB locking.",
+        "Built GitHub Actions CI pipelines covering build, test, Trivy vulnerability scanning and Cosign image signing.",
+        "Implemented ArgoCD GitOps delivery with a Helm chart for dev, stage and prod environments.",
+        "Added Prometheus and Grafana monitoring, and a Python boto3 script to clean up unused AWS resources and control cost.",
+      ],
+    },
+  ],
+  certifications: [
+    "AWS Certified Cloud Practitioner -- Amazon Web Services",
+    "Microsoft Certified: Azure Fundamentals -- Microsoft",
+    "Microsoft Certified: Azure Data Fundamentals -- Microsoft (Jan 2024)",
+  ],
+  education: [
+    "MSc in Computing Science | Griffith College Dublin, Dublin, Ireland | 2026",
+    "BTech in Computer Science | SRKR Engineering College, India",
+  ],
+};
+
+window.PIPELINE_SKILL_CATALOG = [
+  { name: "Amazon Web Services", aliases: ["AWS", "Amazon Web Services"] },
+  { name: "Microsoft Azure", aliases: ["Azure", "Microsoft Azure"] },
+  { name: "Google Cloud", aliases: ["GCP", "Google Cloud", "Google Cloud Platform"] },
+  { name: "Kubernetes", aliases: ["Kubernetes", "K8s"] },
+  { name: "Google Kubernetes Engine", aliases: ["Google Kubernetes Engine", "GKE"] },
+  { name: "Red Hat OpenShift", aliases: ["OpenShift"] },
+  { name: "Amazon ECS", aliases: ["ECS", "Amazon ECS"] },
+  { name: "Docker", aliases: ["Docker"] },
+  { name: "Docker Compose", aliases: ["Docker Compose"] },
+  { name: "Terraform", aliases: ["Terraform"] },
+  { name: "Pulumi", aliases: ["Pulumi"] },
+  { name: "AWS CloudFormation", aliases: ["CloudFormation", "AWS CloudFormation"] },
+  { name: "Ansible", aliases: ["Ansible"] },
+  { name: "Puppet", aliases: ["Puppet"] },
+  { name: "Chef", aliases: ["Chef"] },
+  { name: "Helm", aliases: ["Helm"] },
+  { name: "Argo CD", aliases: ["ArgoCD", "Argo CD"] },
+  { name: "Jenkins", aliases: ["Jenkins"] },
+  { name: "GitHub Actions", aliases: ["GitHub Actions"] },
+  { name: "GitLab", aliases: ["GitLab"] },
+  { name: "Azure DevOps", aliases: ["Azure DevOps"] },
+  { name: "Azure Pipelines", aliases: ["Azure Pipelines"] },
+  { name: "Spinnaker", aliases: ["Spinnaker"] },
+  { name: "CircleCI", aliases: ["CircleCI"] },
+  { name: "Buildkite", aliases: ["Buildkite"] },
+  { name: "Bitbucket Pipelines", aliases: ["Bitbucket Pipelines"] },
+  { name: "CI/CD", aliases: ["CI/CD", "CI CD", "continuous integration", "continuous delivery", "continuous deployment"] },
+  { name: "GitOps", aliases: ["GitOps"] },
+  { name: "Python", aliases: ["Python"] },
+  { name: "Go", aliases: ["Golang", "Go language", "Go programming"] },
+  { name: "Java", aliases: ["Java"] },
+  { name: "Bash", aliases: ["Bash", "shell scripting"] },
+  { name: "Linux", aliases: ["Linux"] },
+  { name: "Prometheus", aliases: ["Prometheus"] },
+  { name: "Grafana", aliases: ["Grafana"] },
+  { name: "ELK / Elastic Stack", aliases: ["ELK", "ELK Stack", "Elastic Stack", "Elasticsearch"] },
+  { name: "Splunk", aliases: ["Splunk"] },
+  { name: "Datadog", aliases: ["Datadog"] },
+  { name: "New Relic", aliases: ["New Relic"] },
+  { name: "PagerDuty", aliases: ["PagerDuty"] },
+  { name: "Apache Kafka", aliases: ["Kafka", "Apache Kafka"] },
+  { name: "HashiCorp Vault", aliases: ["HashiCorp Vault"] },
+  { name: "Consul", aliases: ["Consul"] },
+  { name: "Loki", aliases: ["Loki"] },
+  { name: "OpenTelemetry", aliases: ["OpenTelemetry", "OTel"] },
+  { name: "AWS EKS", aliases: ["EKS"] },
+  { name: "Azure AKS", aliases: ["AKS"] },
+  { name: "AWS EC2", aliases: ["EC2"] },
+  { name: "Amazon S3", aliases: ["S3", "Amazon S3"] },
+  { name: "AWS IAM", aliases: ["AWS IAM", "IAM"] },
+  { name: "AWS VPC", aliases: ["VPC"] },
+  { name: "AWS CloudWatch", aliases: ["CloudWatch"] },
+  { name: "Azure Monitor", aliases: ["Azure Monitor"] },
+  { name: "PostgreSQL", aliases: ["PostgreSQL", "Postgres"] },
+  { name: "MySQL", aliases: ["MySQL"] },
+  { name: "MariaDB", aliases: ["MariaDB"] },
+  { name: "MongoDB", aliases: ["MongoDB"] },
+  { name: "Redis", aliases: ["Redis"] },
+  { name: "Maven", aliases: ["Maven"] },
+  { name: "Git", aliases: ["Git"] },
+  { name: "Gerrit", aliases: ["Gerrit"] },
+  { name: "Artifactory", aliases: ["Artifactory"] },
+  { name: "Trivy", aliases: ["Trivy"] },
+  { name: "Cosign", aliases: ["Cosign"] },
+  { name: "Networking", aliases: ["networking", "DNS", "HTTP proxy", "load balancing"] },
+  { name: "Incident management", aliases: ["incident response", "incident management"] },
+  { name: "On-call", aliases: ["on-call", "on call"] },
+  { name: "SRE / Site Reliability Engineering", aliases: ["SRE", "site reliability"] },
+  { name: "High availability", aliases: ["high availability", "fault tolerant", "fault-tolerant"] },
+  { name: "Disaster recovery", aliases: ["disaster recovery", "DR"] },
+  { name: "Infrastructure as Code", aliases: ["infrastructure as code", "IaC"] },
+  { name: "Observability", aliases: ["observability", "monitoring"] },
+  { name: "Root-cause analysis", aliases: ["root cause analysis", "RCA"] },
+  { name: "Runbooks", aliases: ["runbook", "runbooks"] },
+  { name: "Capacity planning", aliases: ["capacity planning"] },
+];

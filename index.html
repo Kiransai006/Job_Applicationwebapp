@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11181a" />
+    <meta
+      name="description"
+      content="Find DevOps jobs in Ireland that fit your experience and skills, and keep your applications organized."
+    />
+    <title>Pipeline — Your DevOps job search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700;750&family=Manrope:wght@500;600;650;700;750;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="resume-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#overview" aria-label="Pipeline home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M5 22.5h8l4-13h10" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M21.5 5.5 27 9.5l-5.5 4" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="6" cy="22.5" r="2" fill="currentColor" />
+            </svg>
+          </span>
+          <span>pipeline<span class="brand-period">.</span></span>
+        </a>
+
+        <div class="sidebar-caption">WORKSPACE</div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button class="nav-link is-active" data-page="overview">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="5.5" height="6" rx="1.2"/><rect x="11.5" y="3" width="5.5" height="3.5" rx="1.2"/><rect x="11.5" y="8.5" width="5.5" height="8.5" rx="1.2"/><rect x="3" y="11" width="5.5" height="6" rx="1.2"/></svg>
+            <span>Overview</span>
+          </button>
+          <button class="nav-link" data-page="search">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.7" cy="8.7" r="5.4"/><path d="m13 13 4 4" stroke-linecap="round"/></svg>
+            <span>Find jobs</span>
+            <span class="nav-indicator">↗</span>
+          </button>
+          <button class="nav-link" data-page="resume">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 2.8h7l3 3V17H5z"/><path d="M12 3v3h3M8 10h4M8 13h4"/></svg>
+            <span>Resume studio</span>
+          </button>
+          <button class="nav-link" data-page="applications">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 5V3.5h6V5M3 9.5h14M8 9.5v2h4v-2"/></svg>
+            <span>My applications</span>
+            <span class="nav-count" id="nav-count">0</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-caption sidebar-caption-lower">YOUR PROFILE</div>
+        <button class="nav-link" data-page="profile">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="6.5" r="3"/><path d="M4.2 17c0-3.1 2.4-5.2 5.8-5.2s5.8 2.1 5.8 5.2"/></svg>
+          <span>Skills & experience</span>
+        </button>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <span class="sidebar-note-icon">✳</span>
+            <span>Keep your next move<br />moving.</span>
+          </div>
+          <div class="sidebar-account">
+            <div class="avatar" id="sidebar-avatar">KS</div>
+            <div class="sidebar-account-copy">
+              <span class="account-name" id="sidebar-name">Your profile</span>
+              <span class="account-role">DevOps job seeker</span>
+            </div>
+            <button class="icon-button account-edit" data-page="profile" aria-label="Edit profile">↗</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu icon-button" id="mobile-menu" aria-label="Open navigation">☰</button>
+          <div class="breadcrumbs">Career workspace <span>/</span> <strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-right">
+            <span class="live-status"><span class="live-dot"></span> Your search, organized</span>
+            <a class="linkedin-link" href="https://www.linkedin.com/in/kiransai006" target="_blank" rel="noreferrer" aria-label="Open your LinkedIn profile">in <span>↗</span></a>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="page-section is-visible" id="page-overview">
+            <div class="welcome-row">
+              <div>
+                <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT CHAPTER STARTS HERE</div>
+                <h1>Make your next move<span class="heading-dot">.</span></h1>
+                <p class="page-subtitle">A clearer path to your next DevOps opportunity in Ireland.</p>
+              </div>
+              <button class="button button-dark" data-page="search"><span>Explore open roles</span><span class="button-arrow">↗</span></button>
+            </div>
+
+            <div class="search-highlight">
+              <div class="search-highlight-copy">
+                <span class="highlight-kicker"><span class="spark">✳</span> YOUR SEARCH STARTS WITH WHAT MATTERS</span>
+                <h2>Find work that fits.<br />Not just another job.</h2>
+                <p>Search live openings across Ireland, then add your actual experience and skills to shape more relevant searches.</p>
+                <button class="button button-light" data-page="search">Search live openings <span>→</span></button>
+              </div>
+              <div class="highlight-visual" aria-hidden="true">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit orbit-three"></div>
+                <div class="visual-card visual-card-back"><span>◷</span><span>Application<br />in progress</span><i>●</i></div>
+                <div class="visual-card visual-card-front"><span class="visual-check">✓</span><span>Good things take<br />a little momentum.</span></div>
+                <div class="visual-spark">✳</div>
+              </div>
+              <span class="highlight-decoration highlight-decoration-one"></span>
+              <span class="highlight-decoration highlight-decoration-two"></span>
+            </div>
+
+            <div class="metrics-grid">
+              <article class="metric-card">
+                <div class="metric-heading"><span>TRACKED ROLES</span><span class="metric-icon metric-lilac">↗</span></div>
+                <div class="metric-value" id="metric-total">0</div>
+                <div class="metric-caption">Roles in your pipeline</div>
+              </article>
+              <article class="metric-card">
+                <div class="metric-heading"><span>TO APPLY</span><span class="metric-icon metric-yellow">✳</span></div>
+                <div class="metric-value" id="metric-saved">0</div>
+                <div class="metric-caption">Saved for later</div>
+              </article>
+              <article class="metric-card">
+                <div class="metric-heading"><span>APPLICATIONS SENT</span><span class="metric-icon metric-green">↗</span></div>
+                <div class="metric-value" id="metric-applied">0</div>
+                <div class="metric-caption">Applications submitted</div>
+              </article>
+              <article class="metric-card">
+                <div class="metric-heading"><span>INTERVIEWS</span><span class="metric-icon metric-peach">✳</span></div>
+                <div class="metric-value" id="metric-interviews">0</div>
+                <div class="metric-caption">Conversations started</div>
+              </article>
+            </div>
+
+            <div class="dashboard-grid">
+              <section class="panel activity-panel">
+                <div class="panel-heading">
+                  <div><h2>Your application pipeline</h2><p>Keep track of every opportunity, all in one place.</p></div>
+                  <button class="text-button" data-page="applications">View all <span>→</span></button>
+                </div>
+                <div id="recent-applications" class="recent-applications"></div>
+              </section>
+              <section class="panel search-summary">
+                <div class="panel-heading"><div><h2>Your search</h2><p>Current opportunity criteria.</p></div><button class="icon-button subtle-icon" data-page="profile" aria-label="Edit your search criteria">↗</button></div>
+                <div class="criteria-location"><span class="location-dot">⌖</span><span id="summary-location">Ireland</span></div>
+                <div class="criteria-line"><span class="criteria-icon">◷</span><span id="summary-experience">4+ years of experience</span></div>
+                <div class="criteria-divider"></div>
+                <div class="criteria-label">YOUR TECH TOOLKIT</div>
+                <div class="tag-list" id="summary-skills"></div>
+                <button class="text-button edit-criteria" data-page="profile">Edit your profile <span>→</span></button>
+              </section>
+            </div>
+            <footer class="page-footer"><span>Made for your next chapter</span><span>Live results open on trusted job boards</span></footer>
+          </section>
+
+          <section class="page-section" id="page-search">
+            <div class="eyebrow"><span class="eyebrow-line"></span> MAKE YOUR NEXT MOVE</div>
+            <div class="section-title-row"><div><h1>Find your next role<span class="heading-dot">.</span></h1><p class="page-subtitle">Search live DevOps and SRE openings across Ireland.</p></div></div>
+            <section class="panel job-search-panel">
+              <div class="panel-heading"><div><h2>Build your search</h2><p>We’ll open fresh results from each job board, not stale job listings.</p></div><span class="secure-badge"><span></span> LIVE BOARD SEARCHES</span></div>
+              <form id="search-form" class="search-form">
+                <label class="form-field form-field-role"><span>ROLE OR KEYWORD</span><span class="input-with-icon"><span>⌕</span><input id="search-role" name="role" placeholder="DevOps Engineer, SRE, Platform..." /></span></label>
+                <label class="form-field form-field-location"><span>LOCATION</span><span class="input-with-icon"><span>⌖</span><input id="search-location" name="location" placeholder="Ireland" /></span></label>
+                <label class="form-field form-field-experience"><span>EXPERIENCE</span><span class="input-with-icon"><span>◷</span><input id="search-years" name="years" type="number" min="0" max="40" step="1" aria-label="Minimum years of experience" /></span></label>
+                <button class="button button-dark search-submit" type="submit">Search live results <span>↗</span></button>
+              </form>
+              <div class="search-skills-row"><span>INCLUDE YOUR SKILLS</span><div class="tag-list" id="search-skill-tags"></div><button class="add-skill" id="edit-skills" type="button">+ Edit skills</button></div>
+            </section>
+            <div class="results-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> FRESH FROM THE SOURCE</span><h2>Your search, across the web.</h2><p>Choose a board to view current listings. Search terms include your experience and skills.</p></div><span class="results-location" id="results-location">⌖ Ireland</span></div>
+            <div class="source-grid" id="source-grid"></div>
+            <div class="disclaimer-note"><span>ⓘ</span><p>Listings, availability, salary, and experience requirements are provided by each job board and may change. This dashboard links to live search results and does not claim that external postings are verified.</p></div>
+            <footer class="page-footer"><span>Live results open on job boards or targeted searches</span><span>Check each listing for its full requirements</span></footer>
+          </section>
+
+          <section class="page-section" id="page-resume">
+            <div class="eyebrow"><span class="eyebrow-line"></span> YOUR EXPERIENCE, HONESTLY PRESENTED</div>
+            <div class="section-title-row"><div><h1>Resume studio<span class="heading-dot">.</span></h1><p class="page-subtitle">Tailor your provided resume to a job description, then take the LaTeX straight to Overleaf.</p></div></div>
+            <div class="resume-layout">
+              <section class="panel resume-input-panel">
+                <div class="panel-heading"><div><h2>Start with the job description</h2><p>We compare it with the experience, skills, and achievements in your supplied resume.</p></div><span class="profile-lock">◈ Processed in your browser</span></div>
+                <label class="form-field resume-title-field" for="resume-target-role"><span>TARGET ROLE <span class="field-help">Optional</span></span><input class="plain-input" id="resume-target-role" placeholder="e.g. Senior Site Reliability Engineer" maxlength="120" /></label>
+                <label class="form-field resume-description-field" for="job-description"><span>PASTE THE FULL JOB DESCRIPTION</span><textarea class="plain-input job-description-input" id="job-description" maxlength="30000" placeholder="Paste the responsibilities, required experience, technologies, and qualifications here. The match score is more useful when you include the complete job posting." required></textarea></label>
+                <div class="resume-input-footer"><span class="description-count" id="description-count">0 / 30,000</span><button class="button button-dark" id="generate-resume" type="button">Score match & generate <span>↗</span></button></div>
+                <p class="resume-privacy-note">Job descriptions are processed in this browser. They are saved locally only when you choose “Save version”; nothing is uploaded. The generator only reorders your existing skills and experience—it does not invent qualifications or change your results.</p>
+              </section>
+              <aside class="resume-score-panel" id="resume-score-panel" aria-live="polite">
+                <span class="profile-side-spark">✳</span><span class="profile-side-kicker">JOB-DESCRIPTION ALIGNMENT</span><div class="score-empty"><h2>Your match score<br />will appear here.</h2><p>Paste a job description to see skill, responsibility, and experience alignment.</p></div>
+              </aside>
+            </div>
+            <section class="resume-output-panel panel" id="resume-output-panel" hidden>
+              <div class="panel-heading"><div><h2>Your Overleaf-ready resume</h2><p>Paste this source into Overleaf as <code>main.tex</code>, or download the .tex file.</p></div><div class="resume-output-actions"><button class="button button-outline" id="copy-latex" type="button">Copy LaTeX</button><button class="button button-outline" id="save-resume-version" type="button">Save version</button><button class="button button-dark" id="download-latex" type="button">Download .tex <span>↓</span></button></div></div>
+              <div class="overleaf-guide">
+                <span class="overleaf-mark">O</span>
+                <div class="overleaf-guide-copy"><strong>Make your PDF in Overleaf</strong><span>Download the .tex file, start a blank project, upload it as <code>main.tex</code>, then Recompile and download your PDF.</span></div>
+                <a class="overleaf-guide-link" href="https://www.overleaf.com/project" target="_blank" rel="noreferrer">Open Overleaf ↗</a>
+              </div>
+              <textarea class="latex-output" id="latex-output" aria-label="Generated Overleaf LaTeX source" readonly spellcheck="false"></textarea>
+              <p class="resume-privacy-note">Review the generated resume for accuracy and compile it in Overleaf before applying. Scores are keyword-based estimates—not ATS results or hiring predictions.</p>
+              <details class="overleaf-steps"><summary>Show step-by-step PDF export instructions</summary><ol><li>Select <strong>Download .tex</strong> above and save <code>kiran-devops-resume.tex</code>.</li><li>Open Overleaf and choose <strong>New Project → Blank Project</strong>.</li><li>Upload the downloaded .tex file to the project, or open a blank <code>main.tex</code> and paste the source.</li><li>If you uploaded the file, use the file menu to set it as the <strong>Main document</strong> and rename it <code>main.tex</code>.</li><li>Choose <strong>pdfLaTeX</strong>, select <strong>Recompile</strong>, and then select <strong>Download PDF</strong>.</li></ol></details>
+              <p class="resume-privacy-note">Overleaf receives the resume source only when you choose to upload it. Review its privacy policy before uploading personal contact details.</p>
+            </section>
+            <section class="saved-resumes-section" aria-labelledby="saved-resumes-title">
+              <div class="panel-heading saved-resumes-heading"><div><h2 id="saved-resumes-title">Saved versions</h2><p>Reopen or download a tailored resume for another role, saved only in this browser.</p></div><span class="profile-lock" id="resume-version-count">0 / 20 saved locally</span></div>
+              <div class="saved-resumes-list" id="saved-resumes-list"><div class="panel saved-resume-empty">Your saved role-specific resumes will appear here.</div></div>
+            </section>
+            <footer class="page-footer"><span>Tailored without making up your experience</span><span>Overleaf-ready • PDF-to-text friendly</span></footer>
+          </section>
+
+          <section class="page-section" id="page-applications">
+            <div class="eyebrow"><span class="eyebrow-line"></span> YOUR CAREER, IN MOTION</div>
+            <div class="section-title-row"><div><h1>My applications<span class="heading-dot">.</span></h1><p class="page-subtitle">A simple, private space to stay on top of every opportunity.</p></div><button class="button button-dark" id="add-job-button"><span>+ Add a role</span></button></div>
+            <div class="application-toolbar panel">
+              <div class="filter-tabs" role="group" aria-label="Filter applications"><button class="filter-tab is-selected" data-filter="all">All roles <span id="filter-all-count">0</span></button><button class="filter-tab" data-filter="Saved">Saved <span id="filter-saved-count">0</span></button><button class="filter-tab" data-filter="Applied">Applied <span id="filter-applied-count">0</span></button><button class="filter-tab" data-filter="Interview">Interview <span id="filter-interview-count">0</span></button><button class="filter-tab" data-filter="Archived">Archived <span id="filter-archived-count">0</span></button></div>
+              <button class="export-button" id="export-button" type="button">↓ <span>Export CSV</span></button>
+            </div>
+            <div class="applications-list" id="applications-list"></div>
+            <div class="private-note"><span>◈</span> Your profile and application tracker are saved privately in this browser.</div>
+            <footer class="page-footer"><span>Little steps add up</span><span>Your application tracker is stored on this device</span></footer>
+          </section>
+
+          <section class="page-section" id="page-profile">
+            <div class="eyebrow"><span class="eyebrow-line"></span> BUILT AROUND YOU</div>
+            <div class="section-title-row"><div><h1>Your experience, your search<span class="heading-dot">.</span></h1><p class="page-subtitle">Set the details that make your job search and profile feel like you.</p></div></div>
+            <div class="profile-layout">
+              <section class="panel profile-form-panel">
+                <div class="panel-heading"><div><h2>Your profile</h2><p>Used to build relevant searches. You can update it any time.</p></div><span class="profile-lock">◈ Saved on this device</span></div>
+                <form id="profile-form" class="profile-form">
+                  <div class="profile-fields">
+                    <label class="form-field"><span>YOUR NAME</span><input class="plain-input" id="profile-name" name="name" placeholder="Your name" maxlength="80" /></label>
+                    <label class="form-field"><span>YOUR LINKEDIN PROFILE</span><input class="plain-input" id="profile-linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/your-profile" /></label>
+                    <label class="form-field"><span>JOB TITLE</span><input class="plain-input" id="profile-title" name="title" placeholder="DevOps Engineer" maxlength="100" /></label>
+                    <label class="form-field"><span>PREFERRED LOCATION</span><input class="plain-input" id="profile-location" name="location" placeholder="Ireland" maxlength="100" /></label>
+                    <label class="form-field"><span>YEARS OF EXPERIENCE</span><input class="plain-input" id="profile-years" name="years" type="number" min="0" max="40" step="1" /></label>
+                    <label class="form-field"><span>MINIMUM YEARS FOR ROLES</span><input class="plain-input" id="profile-min-years" name="minimumYears" type="number" min="0" max="40" step="1" /></label>
+                  </div>
+                  <label class="form-field skills-edit-field"><span>YOUR SKILLS <span class="field-help">Separate skills with commas</span></span><textarea class="plain-input skills-textarea" id="profile-skills" name="skills" rows="3" placeholder="AWS, Kubernetes, Terraform, Docker, CI/CD"></textarea></label>
+                  <div class="profile-form-footer"><p>LinkedIn restricts automated profile access. Add your skills and experience here to personalize your searches.</p><button class="button button-dark" type="submit">Save your profile <span>✓</span></button></div>
+                </form>
+              </section>
+              <aside class="profile-side-card">
+                <span class="profile-side-spark">✳</span><span class="profile-side-kicker">THE MORE WE KNOW, THE BETTER THE FIT</span><h2>Let your skills<br />lead the way.</h2><p>Add your real experience and toolkit. We’ll use them to tailor searches across the boards.</p><div class="side-card-pills"><span>DevOps</span><span>Ireland</span><span id="profile-card-experience">4+ years</span></div><a class="side-card-link" href="https://www.linkedin.com/in/kiransai006" target="_blank" rel="noreferrer">Open your LinkedIn <span>↗</span></a>
+              </aside>
+            </div>
+            <footer class="page-footer"><span>Your professional story, your way</span><span>Changes are saved only in your browser</span></footer>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <dialog class="add-job-dialog" id="add-job-dialog">
+      <form class="dialog-form" id="add-job-form">
+        <div class="dialog-header"><div><span class="eyebrow"><span class="eyebrow-line"></span> ADD TO YOUR PIPELINE</span><h2>Save an opportunity<span class="heading-dot">.</span></h2></div><button class="icon-button dialog-close" id="close-dialog" type="button" aria-label="Close dialog">×</button></div>
+        <p class="dialog-description">Save a role you found on a job board and decide what to do next.</p>
+        <label class="form-field"><span>JOB TITLE</span><input class="plain-input" name="jobTitle" placeholder="e.g. Senior DevOps Engineer" required maxlength="120" /></label>
+        <label class="form-field"><span>COMPANY</span><input class="plain-input" name="company" placeholder="Company name" maxlength="120" /></label>
+        <label class="form-field"><span>JOB LISTING URL <span class="field-help">Optional</span></span><input class="plain-input" name="jobUrl" type="url" placeholder="https://…" /></label>
+        <label class="form-field"><span>STATUS</span><select class="plain-input" name="status"><option>Saved</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Archived</option></select></label>
+        <div class="dialog-actions"><button class="button button-outline" id="cancel-dialog" type="button">Cancel</button><button class="button button-dark" type="submit">Save role <span>✓</span></button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
