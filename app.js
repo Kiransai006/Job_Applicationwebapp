@@ -73,6 +73,7 @@ let generatedLatex = "";
 let resumeVersions = [];
 let currentResumeAnalysis = null;
 let currentResumeJob = "";
+let currentApplicationSearch = "";
 
 const RESPONSIBILITY_CATALOG = [
   { name: "Automation & toil reduction", aliases: ["automation", "automate", "toil"] },
@@ -760,8 +761,21 @@ function renderMetrics() {
   $("#filter-interview-count").textContent = jobs.filter(
     (job) => job.status === "Interview",
   ).length;
+  $("#filter-offer-count").textContent = jobs.filter(
+    (job) => job.status === "Offer",
+  ).length;
   $("#filter-archived-count").textContent = jobs.filter(
     (job) => job.status === "Archived",
+  ).length;
+  $("#applications-active-count").textContent = activeJobs.length;
+  $("#applications-saved-count").textContent = jobs.filter(
+    (job) => job.status === "Saved",
+  ).length;
+  $("#applications-applied-count").textContent = jobs.filter((job) =>
+    ["Applied", "Interview"].includes(job.status),
+  ).length;
+  $("#applications-offer-count").textContent = jobs.filter(
+    (job) => job.status === "Offer",
   ).length;
 }
 
@@ -874,18 +888,52 @@ function renderOverview() {
 function renderApplications() {
   renderMetrics();
   const allJobs = jobs.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-  const visibleJobs =
+  const statusJobs =
     currentFilter === "all"
-      ? allJobs
+      ? allJobs.filter((job) => job.status !== "Archived")
       : allJobs.filter((job) => job.status === currentFilter);
+  const search = currentApplicationSearch.trim().toLocaleLowerCase();
+  const visibleJobs = search
+    ? statusJobs.filter((job) =>
+        `${job.title} ${job.company}`.toLocaleLowerCase().includes(search),
+      )
+    : statusJobs;
   const list = $("#applications-list");
   list.replaceChildren();
+  $("#application-search").value = currentApplicationSearch;
+  $("#clear-application-search").hidden = !currentApplicationSearch;
 
   if (visibleJobs.length === 0) {
     const empty = document.createElement("div");
     empty.className = "panel empty-applications";
     const isFiltered = currentFilter !== "all";
-    empty.innerHTML = `<div class="empty-state"><span class="empty-state-mark">✳</span><strong>${isFiltered ? "Nothing in this stage just yet." : "Your next opportunity starts here."}</strong><p>${isFiltered ? "Move an application into this stage and it will appear here." : "Search live job boards, then add a role to start building your pipeline."}</p></div>`;
+    const heading = document.createElement("strong");
+    const description = document.createElement("p");
+    if (search) {
+      heading.textContent = "No roles match your search.";
+      description.textContent = "Try another job title or company name, or clear the search.";
+    } else if (isFiltered) {
+      heading.textContent = "Nothing in this stage just yet.";
+      description.textContent = "Move an application into this stage and it will appear here.";
+    } else {
+      heading.textContent = "Your next opportunity starts here.";
+      description.textContent = "Search live job boards, then add a role to start building your pipeline.";
+    }
+    const content = document.createElement("div");
+    content.className = "empty-state";
+    const mark = document.createElement("span");
+    mark.className = "empty-state-mark";
+    mark.textContent = "✳";
+    content.append(mark, heading, description);
+    if (search) {
+      const clear = document.createElement("button");
+      clear.className = "text-button";
+      clear.type = "button";
+      clear.dataset.clearApplicationSearch = "true";
+      clear.textContent = "Clear search";
+      content.append(clear);
+    }
+    empty.append(content);
     list.append(empty);
     return;
   }
@@ -893,20 +941,74 @@ function renderApplications() {
   for (const job of visibleJobs) {
     const row = document.createElement("article");
     row.className = "application-row";
-    const title = job.url
-      ? `<a href="${escapeHtml(job.url)}" target="_blank" rel="noreferrer">${escapeHtml(job.title)} ↗</a>`
-      : `<strong>${escapeHtml(job.title)}</strong>`;
-    row.innerHTML = `
-      <div class="job-name">${title}<span>${escapeHtml(job.company || "Company not specified")}</span></div>
-      <span class="job-date">${dateLabel(job.createdAt)}</span>
-      <select class="status-select" aria-label="Application status for ${escapeHtml(job.title)}" data-status-id="${escapeHtml(job.id)}">
-        ${STATUS_OPTIONS.map(
-          (status) =>
-            `<option value="${status}" ${status === job.status ? "selected" : ""}>${status}</option>`,
-        )
-          .join("")}
-      </select>
-      <button class="remove-role" type="button" data-remove-id="${escapeHtml(job.id)}" aria-label="Archive ${escapeHtml(job.title)}">×</button>`;
+    const mark = document.createElement("span");
+    mark.className = "application-company-mark";
+    mark.setAttribute("aria-hidden", "true");
+    mark.textContent = initials(job.company || job.title);
+
+    const details = document.createElement("div");
+    details.className = "application-details";
+    const title = job.url ? document.createElement("a") : document.createElement("strong");
+    title.className = "application-role";
+    title.textContent = job.title;
+    if (job.url) {
+      title.href = job.url;
+      title.target = "_blank";
+      title.rel = "noreferrer";
+      title.append(document.createTextNode(" ↗"));
+    }
+    const meta = document.createElement("span");
+    meta.className = "application-meta";
+    const company = document.createElement("span");
+    company.textContent = job.company || "Company not specified";
+    const separator = document.createElement("span");
+    separator.className = "application-meta-separator";
+    separator.setAttribute("aria-hidden", "true");
+    separator.textContent = "·";
+    const date = document.createElement("span");
+    date.textContent = `Added ${dateLabel(job.createdAt)}`;
+    meta.append(company, separator, date);
+    details.append(title, meta);
+
+    const status = document.createElement("select");
+    status.className = `status-select ${STATUS_BADGES[job.status]}`;
+    status.setAttribute("aria-label", `Application status for ${job.title}`);
+    status.dataset.statusId = job.id;
+    for (const optionStatus of STATUS_OPTIONS) {
+      const option = document.createElement("option");
+      option.value = optionStatus;
+      option.textContent = optionStatus;
+      option.selected = optionStatus === job.status;
+      status.append(option);
+    }
+
+    const actions = document.createElement("div");
+    actions.className = "application-row-actions";
+    if (job.url) {
+      const open = document.createElement("a");
+      open.className = "application-open-link";
+      open.href = job.url;
+      open.target = "_blank";
+      open.rel = "noreferrer";
+      open.textContent = "View role ↗";
+      actions.append(open);
+    }
+    const archive = document.createElement("button");
+    archive.className = "remove-role";
+    archive.type = "button";
+    if (job.status === "Archived") {
+      archive.dataset.restoreId = job.id;
+      archive.setAttribute("aria-label", `Restore ${job.title}`);
+      archive.title = "Restore to active roles";
+      archive.textContent = "↶";
+    } else {
+      archive.dataset.removeId = job.id;
+      archive.setAttribute("aria-label", `Archive ${job.title}`);
+      archive.title = "Archive role";
+      archive.textContent = "×";
+    }
+    actions.append(archive);
+    row.append(mark, details, status, actions);
     list.append(row);
   }
 }
@@ -1271,6 +1373,19 @@ $$(".filter-tab").forEach((button) => {
   });
 });
 
+$("#application-search").addEventListener("input", (event) => {
+  currentApplicationSearch = event.currentTarget.value;
+  renderApplications();
+  const search = $("#application-search");
+  search.focus();
+  search.setSelectionRange(search.value.length, search.value.length);
+});
+$("#clear-application-search").addEventListener("click", () => {
+  currentApplicationSearch = "";
+  renderApplications();
+  $("#application-search").focus();
+});
+
 $("#applications-list").addEventListener("change", (event) => {
   const select = event.target.closest("[data-status-id]");
   if (!select) return;
@@ -1285,6 +1400,21 @@ $("#applications-list").addEventListener("change", (event) => {
 });
 
 $("#applications-list").addEventListener("click", (event) => {
+  const clearButton = event.target.closest("[data-clear-application-search]");
+  if (clearButton) {
+    currentApplicationSearch = "";
+    renderApplications();
+    $("#application-search").focus();
+    return;
+  }
+  const restoreButton = event.target.closest("[data-restore-id]");
+  if (restoreButton) {
+    const job = jobs.find((entry) => entry.id === restoreButton.dataset.restoreId);
+    if (!job) return;
+    job.status = "Saved";
+    if (persistJobs()) showToast("Role restored to your active pipeline.");
+    return;
+  }
   const removeButton = event.target.closest("[data-remove-id]");
   if (!removeButton) return;
   const job = jobs.find((entry) => entry.id === removeButton.dataset.removeId);
